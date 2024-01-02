@@ -1,0 +1,8 @@
+input[type=text]{ margin: 10px 10px; width: 8em;font-size:10pt; padding-left:3px;height:1.5em;border:solid 1px darkgray;}
+select { margin: 10px 10px; width: 8em;font-size:10pt; padding-left:3px;height:1.8em;border:solid 1px darkgray;}
+
+button {
+    font-size: 10pt;
+    margin: 10px 10px;
+    height:1.5em;
+}

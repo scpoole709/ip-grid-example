@@ -1,0 +1,65 @@
+<div style="width: 100%; height:600px;display:flex;">
+  <div id="grid-div" style="width: 60%; height:600px;">
+      <ip-grid (interface)="setGridInterface($event)" 
+               (columnStateChange)="colStateChange($event)"></ip-grid>
+  </div>
+
+  <div style="display:flex;flex-direction: column;">
+      <div style="display: flex">
+          <button (click)="search($event)">Search</button>
+         
+          <select [(ngModel)]="searchField" placeholder="Enter search field">
+            <option *ngFor="let c of columns">{{c.field}}</option>
+          </select>
+          <input type="text" [(ngModel)]="searchValue" placeholder="Enter search text">
+          <button (click)="reset($event)">Reset</button>
+      </div>
+      <div style="display: flex">
+          <button (click)="select($event)">Set selected</button>
+          <select [(ngModel)]="selField" placeholder="Enter search field">
+            <option *ngFor="let c of columns">{{c.field}}</option>
+          </select>
+          <input type="text" [(ngModel)]="selValue" >
+      </div>
+      <!-- <button (click)="append($event)">Append</button>
+      <button (click)="delete($event)">Delete</button> -->
+      <button (click)="deleteSelected($event)">Delete selection</button>   
+
+      <button (click)="updateColState()">Update column state</button>     
+      
+      <div style="display: flex">
+          <label style="margin: 10px 10px;height:1.25em;">Select Group field</label>
+          <select [(ngModel)]="groupField" placeholder="Enter search field">
+            <option *ngFor="let c of columns">{{c.field}}</option>
+          </select>
+      </div>
+      <button (click)="group($event, 'set')">Set group</button>
+      <button (click)="group($event, 'add')">Add group</button>
+      <button (click)="group($event, 'remove')">Remove group</button>
+      <button (click)="group($event, 'end')">End grouping</button>
+      <button (click)="openDlg($event)">Show Popup</button>
+
+      <div style="display: flex">
+          <button (click)="setData($event)">Set data count</button>
+          <input type="number" [(ngModel)]="dataCount" >
+      </div>
+
+      <div style="display: flex">
+          <button (click)="setRowHeight($event)">Set row height</button>
+          <input type="text" [(ngModel)]="rowHeight" >
+      </div>
+
+      <div style="display: flex">
+          <button (click)="setHdrHeight($event)">Set header height</button>
+          <input type="text" [(ngModel)]="hdrHeight" >
+      </div>
+      <div style="display: flex">
+          <button (click)="setGrpBG($event)">Set group background</button>
+          <input type="text" [(ngModel)]="grpBG" >
+      </div>
+      <div style="display: flex">
+          <button (click)="setGrpColor($event)">Set group color</button>
+          <input type="text" [(ngModel)]="grpClr" >
+      </div>
+  </div>
+</div>
